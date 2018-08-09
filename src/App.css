@@ -2,3 +2,6 @@
 .background {
     background-color: '#0036ff';
 }
+.tabBackground {
+    background-color: '#0036ff'!important;
+}
