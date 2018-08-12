@@ -49,21 +49,23 @@ let mql = window.matchMedia('(max-width: 500px)');
             return(
                 <div>
                     <MuiThemeProvider theme={theme}>
-                        <div className='background'>
-                            <Paper style={{width: '100vw'}}>
-                                <Tabs
-                                    value={this.state.value}
-                                    onChange={this.handleChange}
-                                    fullWidth
-                                    indicatorColor="secondary"
-                                    textColor="secondary"
-                                    className="tabBackground"
-                                >
-                                <Tab icon={<WorkIcon/>} label="Work" className="tabBackground"/>
-                                <Tab icon={<PersonIcon/>} label="Me"/>
-                                <Tab icon={<MessageIcon/>} label="Contact"/>
-                                </Tabs>
-                            </Paper>
+                        <div className="background">
+                            <div className='tabBar'>
+                                <Paper style={{width: '100vw'}}>
+                                    <Tabs
+                                        value={this.state.value}
+                                        onChange={this.handleChange}
+                                        fullWidth
+                                        indicatorColor="secondary"
+                                        textColor="secondary"
+                                        className="tabBackground"
+                                    >
+                                    <Tab icon={<WorkIcon color={'secondary'}/>} label="Work"/>
+                                    <Tab icon={<PersonIcon color='secondary'/>} label="Me"/>
+                                    <Tab icon={<MessageIcon color='secondary'/>} label="Contact"/>
+                                    </Tabs>
+                                </Paper>
+                            </div>
                         </div>
                     </MuiThemeProvider>
                 </div>

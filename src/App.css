@@ -1,7 +1,11 @@
 /* Home styles*/ 
-.background {
-    background-color: '#0036ff';
+.tabBar{
+    position: fixed;
+    bottom: 0;
 }
 .tabBackground {
-    background-color: '#0036ff'!important;
+   background-color: #0008ca;
+}
+.background{
+    background-color: #0008ca;
 }
