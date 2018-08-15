@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import {MuiThemeProvider} from '@material-ui/core/styles';
 import theme from '../Theme';
 import '../.././App.css'
@@ -52,12 +50,14 @@ let mql = window.matchMedia('(max-width: 500px)');
         if (this.state.isMobile === true){
             return(
                 <div>
-                   {/* //Routes */}
+                   {/* Routes */}
                     <div>
                         <Route exact path='/' component={Me}/>
                         <Route path='/work' component={Work}/>
                         <Route path='/contact' component={Contact}/>
                     </div>
+
+                    {/* Tab bar */}
                     <MuiThemeProvider theme={theme}>
                         <div className="background">
                             <div className='tabBar'>
