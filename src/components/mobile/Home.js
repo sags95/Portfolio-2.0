@@ -10,12 +10,11 @@ import Tab from '@material-ui/core/Tab';
 import WorkIcon from '@material-ui/icons/WorkOutline'
 import PersonIcon from '@material-ui/icons/PersonOutline';
 import MessageIcon from '@material-ui/icons/MessageOutlined';
+import Work from '../tabs/Work';
+import Me from '../tabs/Me';
+import Contact from '../tabs/Contact';
+import {Link, Route} from 'react-router-dom';
 
-const styles = {
-    root: {
-        backgroundColor: '#0036ff'
-    }
-}
 
 let mql = window.matchMedia('(max-width: 500px)');
 
@@ -36,8 +35,13 @@ let mql = window.matchMedia('(max-width: 500px)');
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         mql.addListener(this.layout)
+        if (mql.matches){
+            this.setState({isMobile: true})
+        } else {
+            this.setState({isMobile: false})
+        }
     }
 
     handleChange = (event, value) => {
@@ -48,6 +52,12 @@ let mql = window.matchMedia('(max-width: 500px)');
         if (this.state.isMobile === true){
             return(
                 <div>
+                   {/* //Routes */}
+                    <div>
+                        <Route exact path='/' component={Me}/>
+                        <Route path='/work' component={Work}/>
+                        <Route path='/contact' component={Contact}/>
+                    </div>
                     <MuiThemeProvider theme={theme}>
                         <div className="background">
                             <div className='tabBar'>
@@ -60,9 +70,9 @@ let mql = window.matchMedia('(max-width: 500px)');
                                         textColor="secondary"
                                         className="tabBackground"
                                     >
-                                    <Tab icon={<WorkIcon color={'secondary'}/>} label="Work"/>
-                                    <Tab icon={<PersonIcon color='secondary'/>} label="Me"/>
-                                    <Tab icon={<MessageIcon color='secondary'/>} label="Contact"/>
+                                    <Tab icon={<PersonIcon/>} label="Me" component={Link} to='/'/>
+                                    <Tab icon={<WorkIcon/>} label="Work" component={Link} to='/work'/>
+                                    <Tab icon={<MessageIcon/>} label="Contact" component={Link} to='/contact'/>
                                     </Tabs>
                                 </Paper>
                             </div>
