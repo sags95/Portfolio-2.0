@@ -59,7 +59,7 @@ let mql = window.matchMedia('(max-width: 500px)');
 
                     {/* Tab bar */}
                     <MuiThemeProvider theme={theme}>
-                        <div className="background">
+                        <div style={{backgroundColor: '#0008ca'}}>
                             <div className='tabBar'>
                                 <Paper style={{width: '100vw'}}>
                                     <Tabs

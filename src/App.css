@@ -8,6 +8,12 @@
 }
 .background{
     background-color: #0008ca;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 /* Me styles */
+.cardWrap {
+    margin-top: 30px;
+}
